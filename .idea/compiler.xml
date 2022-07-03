@@ -3,6 +3,9 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.7">
       <module name="Clean_Architecture_Template.app" target="11" />
+      <module name="Clean_Architecture_Template.buildSrc" target="11" />
+      <module name="Clean_Architecture_Template.buildSrc.main" target="11" />
+      <module name="Clean_Architecture_Template.buildSrc.test" target="11" />
       <module name="Clean_Architecture_Template.modules.calculate_factorial.data" target="11" />
       <module name="Clean_Architecture_Template.modules.calculate_factorial.domain" target="11" />
       <module name="Clean_Architecture_Template.modules.calculate_factorial.presentation" target="11" />
