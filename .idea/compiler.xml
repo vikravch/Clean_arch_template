@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="1.7">
+      <module name="Clean_Architecture_Template.app" target="11" />
+      <module name="Clean_Architecture_Template.modules.calculate_factorial.data" target="11" />
+      <module name="Clean_Architecture_Template.modules.calculate_factorial.domain" target="11" />
+      <module name="Clean_Architecture_Template.modules.calculate_factorial.presentation" target="11" />
+      <module name="Clean_Architecture_Template.modules.core.data" target="11" />
+      <module name="Clean_Architecture_Template.modules.core.domain" target="11" />
+      <module name="Clean_Architecture_Template.modules.core.presentation" target="11" />
+      <module name="Clean_Architecture_Template.modules.domain" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,26 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "Clean Architecture Template"
+include ':app'
+include ':modules'
+include ':modules:core'
+include ':modules:calculate_factorial'
+include ':modules:core:data'
+include ':modules:core:domain'
+include ':modules:core:presentation'
+include ':modules:calculate_factorial:data'
+include ':modules:calculate_factorial:domain'
+include ':modules:calculate_factorial:presentation'
+include ':modules:calculate_factorial:pure_bl'
