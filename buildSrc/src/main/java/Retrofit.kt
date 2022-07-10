@@ -1,9 +1,8 @@
 object Retrofit {
-    private const val version = "2.9.0"
-    const val retrofit = "com.squareup.retrofit2:retrofit:$version"
-    const val moshiConverter = "com.squareup.retrofit2:converter-moshi:$version"
-
-    private const val okHttpVersion = "5.0.0-alpha.2"
-    const val okHttp = "com.squareup.okhttp3:okhttp:$okHttpVersion"
-    const val okHttpLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:$okHttpVersion"
+    private const val retrofitVersion = "2.9.0"
+    private const val okhttpVersion = "4.9.3"
+    const val retrofit = "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    const val converterGson = "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    const val okHttp = "com.squareup.okhttp3:okhttp:$okhttpVersion"
+    const val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
 }

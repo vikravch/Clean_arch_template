@@ -38,6 +38,12 @@ dependencies {
     kapt DaggerHilt.hiltCompiler
     implementation DaggerHilt.hiltAndroid
 
+    // retrofit
+    implementation(Retrofit.retrofit)
+    implementation(Retrofit.converterGson)
+    implementation(Retrofit.okHttp)
+    implementation(Retrofit.loggingInterceptor)
+
     testImplementation Testing.junit4
     androidTestImplementation Testing.junit4
 }

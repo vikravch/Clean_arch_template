@@ -30,6 +30,12 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion compose_version
+    }
 }
 
 dependencies {
@@ -40,4 +46,21 @@ dependencies {
 
     testImplementation Testing.junit4
     androidTestImplementation Testing.junit4
+
+    implementation Compose.compiler
+    implementation Compose.ui
+    implementation Compose.uiToolingPreview
+    implementation Compose.hiltNavigationCompose
+    implementation Compose.navigation
+    implementation Compose.material
+    implementation Compose.runtime
+    implementation Compose.viewModelCompose
+    implementation Compose.activityCompose
+    implementation 'androidx.constraintlayout:constraintlayout-compose:1.0.1'
+
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
+    debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_version"
+
+
 }

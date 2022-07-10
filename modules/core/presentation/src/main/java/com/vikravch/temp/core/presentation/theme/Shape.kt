@@ -1,4 +1,4 @@
-package com.vikravch.cleanarchitecturetemplate.ui.theme
+package com.vikravch.temp.core.presentation.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes
