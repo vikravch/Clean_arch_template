@@ -18,10 +18,11 @@ import javax.inject.Inject
 class CalculateFactorialPageViewModel @Inject constructor(
      private val useCases: UseCases
 ):ViewModel() {
-
+    // Use if we need to save state
     var state by mutableStateOf(CalculateFactorialState())
         private set
 
+    // Use if we need to send events to UI
     private val _uiEvent = Channel<UiEvent>()
     val uiEvent = _uiEvent.receiveAsFlow()
 
@@ -46,5 +47,10 @@ class CalculateFactorialPageViewModel @Inject constructor(
 
     sealed class UiEvent {
         object QuoteLoadedError: UiEvent()
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        _uiEvent.close()
     }
 }
