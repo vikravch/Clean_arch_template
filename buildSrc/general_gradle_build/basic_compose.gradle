@@ -1,22 +1,15 @@
-apply plugin:'org.jetbrains.kotlin.android'
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-kapt'
-apply plugin: 'kotlin-parcelize'
+apply plugin: 'org.jetbrains.kotlin.android'
 
 android {
     compileSdk ProjectConfig.compileSdk
-
     defaultConfig {
         minSdk ProjectConfig.minSdk
         targetSdk ProjectConfig.targetSdk
-        versionCode ProjectConfig.versionCode
-        versionName ProjectConfig.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
-
     buildTypes {
         release {
             minifyEnabled false
@@ -36,31 +29,28 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion Compose.composeVersion
     }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
 }
 
 dependencies {
-    implementation project(path: Modules.corePresentation)
-
-    kapt DaggerHilt.hiltCompiler
-    implementation DaggerHilt.hiltAndroid
+    implementation AndroidX.coreKtx
+    implementation AndroidX.appCompat
+    implementation Google.material
+    implementation AndroidX.lifecycleRuntimeKtx
 
     testImplementation Testing.junit4
-    androidTestImplementation Testing.junit4
+    androidTestImplementation Testing.junitAndroidExt
+    androidTestImplementation Testing.espresso
 
-    implementation Compose.compiler
     implementation Compose.ui
-    implementation Compose.uiToolingPreview
-    implementation Compose.hiltNavigationCompose
-    implementation Compose.navigation
     implementation Compose.material
-    implementation Compose.runtime
-    implementation Compose.viewModelCompose
+    implementation Compose.uiToolingPreview
     implementation Compose.activityCompose
-    implementation 'androidx.constraintlayout:constraintlayout-compose:1.0.1'
-
     androidTestImplementation Testing.composeUiTest
     debugImplementation Testing.composeUITooling
     debugImplementation Testing.composeUITestManifest
-
-
 }

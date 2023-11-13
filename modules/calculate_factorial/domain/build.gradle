@@ -1,3 +1,0 @@
-apply {
-    from("$rootDir/buildSrc/general_gradle_build/domain_build.gradle")
-}

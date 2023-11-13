@@ -1,8 +1,6 @@
-apply plugin:'org.jetbrains.kotlin.android'
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-kapt'
-apply plugin: 'kotlin-parcelize'
+apply plugin: 'org.jetbrains.kotlin.android'
+
 
 android {
     compileSdk ProjectConfig.compileSdk
@@ -10,8 +8,6 @@ android {
     defaultConfig {
         minSdk ProjectConfig.minSdk
         targetSdk ProjectConfig.targetSdk
-        versionCode ProjectConfig.versionCode
-        versionName ProjectConfig.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -33,17 +29,12 @@ android {
 }
 
 dependencies {
-    implementation project(path: Modules.coreData)
 
-    kapt DaggerHilt.hiltCompiler
-    implementation DaggerHilt.hiltAndroid
-
-    // retrofit
-    implementation(Retrofit.retrofit)
-    implementation(Retrofit.converterGson)
-    implementation(Retrofit.okHttp)
-    implementation(Retrofit.loggingInterceptor)
+    implementation AndroidX.coreKtx
+    implementation AndroidX.appCompat
+    implementation Google.material
 
     testImplementation Testing.junit4
-    androidTestImplementation Testing.junit4
+    androidTestImplementation Testing.junitAndroidExt
+    androidTestImplementation Testing.espresso
 }

@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = ProjectConfig.appId+".core.domain"
+    namespace = ProjectConfig.appId+".core.data"
 }
 
 apply {
