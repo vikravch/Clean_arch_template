@@ -18,4 +18,8 @@ object Compose {
 
     private const val lifecycleVersion = "2.4.0"
     const val viewModelCompose = "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycleVersion"
+
+    // "androidx.navigation:navigation-compose:2.5.1"
+    private const val navigationComposeVersion = "2.5.1"
+    const val navigationCompose = "androidx.navigation:navigation-compose:$navigationComposeVersion"
 }

@@ -45,5 +45,9 @@ dependencies {
     implementation(Retrofit.loggingInterceptor)
 
     testImplementation Testing.junit4
+    testImplementation Testing.junitAndroidExt
+    testImplementation Testing.coroutines
+    testImplementation Testing.mockk
+    testImplementation Testing.mockWebServer
     androidTestImplementation Testing.junit4
 }

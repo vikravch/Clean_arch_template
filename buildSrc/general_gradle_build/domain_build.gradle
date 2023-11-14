@@ -35,6 +35,9 @@ android {
 dependencies {
     implementation project(path: Modules.coreDomain)
     testImplementation Testing.junit4
+    testImplementation Testing.junitAndroidExt
+    testImplementation Testing.coroutines
+    testImplementation Testing.mockk
     androidTestImplementation Testing.junit4
 
     kapt DaggerHilt.hiltCompiler

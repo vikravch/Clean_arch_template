@@ -10,6 +10,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -61,14 +62,15 @@ fun CalculateFactorialPage(
                 end.linkTo(endGuideline)
             })
 
-        TextField(value = text, onValueChange = {
-            setText(it)
+        TextField(value = text,
+            onValueChange = {
+                setText(it)
         },
         modifier = Modifier.constrainAs(etInput){
             top.linkTo(title.bottom)
             start.linkTo(startGuideline)
             end.linkTo(endGuideline)
-        })
+        }.testTag("factorial_input"))
 
         Button(onClick = {
             viewModel.onEvent(CalculateFactorialEvent.CalculateFactorial(
