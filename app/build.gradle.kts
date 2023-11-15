@@ -17,7 +17,7 @@ android {
         versionCode = ProjectConfig.versionCode
         versionName = ProjectConfig.versionName
 
-        testInstrumentationRunner =  "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.vikravch.cleanarchitecturetemplate.HiltTestRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -49,6 +49,10 @@ android {
 }
 
 dependencies {
+    //testImplementation("org.mockito:mockito-core:3.8.0")
+    //androidTestImplementation("org.mockito:mockito-android:3.8.0")
+    //androidTestImplementation("com.linkedin.dexmaker:dexmaker-mockito-inline:2.21.0")
+
     kapt(DaggerHilt.hiltCompiler)
     implementation(DaggerHilt.hiltAndroid)
 
@@ -95,7 +99,7 @@ dependencies {
     androidTestImplementation(Testing.mockk)
     androidTestImplementation(Testing.mockWebServer)
     androidTestImplementation(Testing.hiltTesting)
-    androidTestImplementation(Testing.mockkAndroid)
+    //androidTestImplementation(Testing.mockkAndroid)
     kaptAndroidTest(DaggerHilt.hiltCompiler)
     androidTestImplementation(Testing.testRunner)
     androidTestImplementation(Testing.testCore)

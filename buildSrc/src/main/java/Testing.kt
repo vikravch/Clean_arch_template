@@ -8,7 +8,7 @@ object Testing {
     private const val coroutinesTestVersion = "1.5.1"
     const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesTestVersion"
 
-    private const val espressoVersion = "3.5.1"
+    private const val espressoVersion = "3.3.0"
     const val espresso = "androidx.test.espresso:espresso-core:$espressoVersion"
 
     const val composeUiTest = "androidx.compose.ui:ui-test-junit4:${Compose.composeVersion}"

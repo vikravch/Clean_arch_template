@@ -6,8 +6,10 @@ import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performTextInput
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.vikravch.cleanarchitecturetemplate.MainActivity
 import com.vikravch.cleanarchitecturetemplate.MainActivityContent
+import com.vikravch.cleanarchitecturetemplate.clearAndSetContent
 import com.vikravch.temp.calculate_factorial.data.fake.QuoteRepositoryFake
 import com.vikravch.temp.calculate_factorial.presentation.calculate_factorial.CalculateFactorialPageViewModel
 import com.vikravch.test.calculate_factorial.domain.repository.QuoteRepository
@@ -42,7 +44,8 @@ class CalculateFactorialPageScreenE2E {
             getNewQuote = GetNewQuote(quoteRepository)
         )
         viewModel = CalculateFactorialPageViewModel(useCases)
-        composeRule.setContent {
+        composeRule.clearAndSetContent {
+            navController = rememberNavController()
             MainActivityContent(
                 navController = navController,
                 viewModel = viewModel
@@ -60,6 +63,6 @@ class CalculateFactorialPageScreenE2E {
     fun calculateFactorialPageScreen_calculateFactorial() {
         composeRule.onNodeWithTag("factorial_input").performTextInput("5")
         composeRule.onNodeWithText("Calculate").performClick()
-        composeRule.onNodeWithText("120").assertExists()
+        composeRule.onNodeWithText("Result = 120").assertExists()
     }
 }
